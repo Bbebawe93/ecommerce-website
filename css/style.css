@@ -1,0 +1,147 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    min-height: calc(100vh - 140px);
+}
+
+
+header,
+footer {
+    background-color: #2e4056;
+}
+
+.copyright {
+    text-align: right;
+}
+
+#logo-link {
+    color: greenyellow;
+    font-weight: bold;
+    
+}
+/* site logo styles 
+====================*/
+#site-logo {
+    width: 220px;
+    height: 100px;
+}
+#site-logo:hover {
+    opacity: 0.5;
+}
+
+/* navigation menu styles 
+=========================*/
+.navbar .nav-item .nav-link:link {
+    font-family: 'Patrick Hand', cursive;
+    text-align: center;
+    font-size: 20px;
+    background-color: whitesmoke;
+    color: #73080d;
+    margin-right: 5px;
+   border-radius: 20px;
+}
+
+
+.navbar .navbar-nav .nav-item .nav-link:visited {
+    font-size: 20px;
+    color: #73080d;
+
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    opacity: .75;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+  
+}
+
+.navbar .navbar-nav .nav-item .nav-link:active {
+    /* color: #73080d; */
+    color: #0F8A5F;
+
+}
+
+.navbar .navbar-nav .nav-item .nav-link.current {
+    color: #0F8A5F;
+    opacity: 1;
+    font-weight: bold;
+}
+
+/* page headings styles 
+========================*/
+
+.main-heading,
+.secondary-heading,
+.third-heading {
+    background-color: #2e4056;
+    color: rgba(0, 255, 128, 0.76);
+    padding: 5px;
+    text-align: center;
+    box-shadow: #2e4056 0 0 20px;
+    border-radius: 20px;
+    font-weight: normal;
+    margin-top: 30px;
+}
+
+
+
+/* register and login form styles 
+====================*/
+#registration-form {
+    width: 90%;
+    margin: 0 auto;
+}
+#login-form {
+    width: 80%;
+    margin: 0 auto;
+}   
+
+legend {
+    font-size: 18px;
+}
+input {
+    margin-bottom: 10px;
+}
+#register-button {
+    width: 100%;
+}
+#login-button, #register-button {
+    width: 100%;
+    margin: 10px 0;
+}
+.clear-button {
+    width: 100%;
+}
+
+/* footer styles 
+================*/
+.footer-info{
+    text-align: center;
+    color: lightblue
+}
+
+form .success,
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+
+.error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+
+/* class to hide element */
+.hide {
+    display : none; 
+}
