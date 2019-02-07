@@ -14,7 +14,7 @@ $collection = $db->products;
 $productToSearch = filter_input(INPUT_POST, 'productToSearch', FILTER_SANITIZE_STRING);
 
 $searchCriteria = [
-    "product name" => $productToSearch,
+    '$text' => ['$search' => $productToSearch],
 ];
 
 // find product in the database, 
@@ -25,12 +25,19 @@ $productListCount = $collection->find($searchCriteria);
 $productsFoundCount =$productListCount->count(); 
 
 if($productsFoundCount > 0 ) {
+    $row = 1;
     foreach($productList as $product) {
-        echo "<th scope='row'>1</th>
-        <td>{$product['product name']}</td>
-        <td>{$product['product price']}</td>
-        <td>{$product['product image']}</td>
-        <td>Add to Basket</td>";
+        echo 
+        "<tr>
+        <th scope='row'>$row</th>
+        <td>{$product['name']}</td>
+        <td>{$product['size']}</td>
+        <td>{$product['price']}</td>
+        <td>{$product['description']}</td>
+        <td><img id='product-image' class='img-thumbnail' src='{$product['image']}'></td>
+        <td>Add to Basket</td>
+        </tr>";
+        $row++;
     }
 } else{
     echo "Sorry, product not found";

@@ -43,7 +43,6 @@ $(".product-info").html(returnedProductList);
                 //Get data from server
                 $(".product-info").html(request.responseText);
                 returnedProductList = request.responseText;
-               console.log(request.responseText);
             } else
                 console.log("Error communicating with server: " + request.status);
         };

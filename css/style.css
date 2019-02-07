@@ -145,3 +145,6 @@ form .success,
 .hide {
     display : none; 
 }
+#product-image{
+max-width: 80px;
+}

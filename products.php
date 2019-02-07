@@ -76,34 +76,19 @@ output_head("Title", "Description");
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Product Name</th>
+                                <th scope="col">Size</th>
                                 <th scope="col">Price</th>
+                                <th scope="col">Description</th>
                                 <th scope="col">Image</th>
-                                <th scope="col">Available</th>
+                                <th scope="col">Add to Basket</th>
+
 
                             </tr>
                         </thead>
                         <tbody class="product-info">
                             <tr >
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Add to Basket</td>
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>Add to Basket</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Add to Basket</td>
+                                <th scope="row"></th>
+                                <td>Search for your products to display product results</td>
                             </tr>
                         </tbody>
                     </table>
