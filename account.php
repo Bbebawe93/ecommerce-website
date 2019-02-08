@@ -1,15 +1,25 @@
+<?php
+//Start session management
+session_start();
+if(isset($_SESSION['username'])) {
+header('Location: user.php');
+exit;
+}
+?>
 <!doctype <!DOCTYPE html>
 <!-- Begin html5 document -->
 <html lang="en">
 <!-- Begin head element -->
 <head>
 <?php
-include "php/php-include/head.php"; 
-output_head("Title", "Description"); 
+include "php/php-include/head.php";
+output_head("Title", "Description");
 ?>
  <!-- js scripts -->
  <script src="js/register.js"></script>
  <script src="js/login.js"></script>
+ <script src="js/logout.js"></script>
+
 </head>
 
 
@@ -46,9 +56,17 @@ output_head("Title", "Description");
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link current" href="account.php">
+                            <?php
+                            if(!isset($_SESSION['username'])) {
+                                echo '<a class="nav-link" href="account.php">
                                     <i class="fas fa-user"></i> Account
-                                </a>
+                                </a>';
+                            }else {
+                                echo '<a class="nav-link" href="user.php">
+                                    <i class="fas fa-user"></i> Account
+                                </a>';
+                            }
+                            ?>
                             </li>
                         </ul>
                     </div>
@@ -59,14 +77,15 @@ output_head("Title", "Description");
         <!-- end header -->
         <!-- begin main -->
         <main class="container">
+            <div id="dialog"></div>
             <div class="row">
-                <div class="col-sm-12 col-md-4">
+                    <div class="col-sm-12 col-md-4">
                     <h2 class="secondary-heading">Login to your Account</h2>
                     <!-- Login form -->
                     <form id="login-form" action="" method="POST">
                         <fieldset class="form-group">
                             <legend>Please fill in the form to login to your account</legend>
-                            <label for="log-username"><i class="fa fa-user icon"></i> Username: </label><span id="log-username-error"></span>
+                            <label for="log-username"><i class="fa fa-user icon"></i> Username: </label><span id="log-username-error" class="error"></span>
                             <input class="form-control" type="text" name="log-username" id="log-username" required>
                             <label for="log-password"><i class="fas fa-key icon"></i> Password: </label>
                             <input class="form-control" type="password" name="log-password" id="log-password" required>
@@ -75,7 +94,7 @@ output_head("Title", "Description");
                         </fieldset>
                     </form>
                 </div>
-                <div class="col-sm-12 col-md-8">
+                    <div class="col-sm-12 col-md-8">
                     <h1 class="main-heading">Register for a new Account</h1>
                     <!-- Registration form -->
                     <form id="registration-form" class="" action="" method="POST">
@@ -109,10 +128,10 @@ output_head("Title", "Description");
     <!-- begin footer -->
 
     <footer class="container-fluid">
-    <?php 
-        include "php/php-include/footer.php"; 
-        output_footer(); 
-        ?>
+    <?php
+include "php/php-include/footer.php";
+output_footer();
+?>
     </footer>
     <!-- end footer -->
 </body>

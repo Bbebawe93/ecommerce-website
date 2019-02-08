@@ -2,20 +2,24 @@
 
 //Start session management
 session_start();
+include "profile.php"
 ?>
 <!doctype <!DOCTYPE html>
 <!-- Begin html5 document -->
 <html lang="en">
 <!-- Begin head element -->
-
 <head>
 <?php
-include "php/php-include/head.php"; 
-output_head("Title", "Description"); 
+include "php/php-include/head.php";
+output_head("Title", "Description");
 ?>
  <!-- js scripts -->
  <script src="js/register.js"></script>
+ <script src="js/login.js"></script>
+ <script src="js/logout.js"></script>
+
 </head>
+
 
 <body>
     <!-- begin wrapper, wraps header and main, keeps footer and the bottom -->
@@ -35,7 +39,7 @@ output_head("Title", "Description");
                     <div id="nav-menu" class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link current" href="index.php">
+                                <a class="nav-link" href="index.php">
                                     <i class="fas fa-home"></i> Home
                                 </a>
                             </li>
@@ -50,17 +54,9 @@ output_head("Title", "Description");
                                 </a>
                             </li>
                             <li class="nav-item">
-                            <?php
-                            if(!isset($_SESSION['username'])) {
-                                echo '<a class="nav-link" href="account.php">
+                                <a class="nav-link current" href="user.php">
                                     <i class="fas fa-user"></i> Account
-                                </a>';
-                            }else {
-                                echo '<a class="nav-link" href="user.php">
-                                    <i class="fas fa-user"></i> Account
-                                </a>';
-                            }
-                            ?>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -73,15 +69,19 @@ output_head("Title", "Description");
         <main class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                    <h2>Recommended Products</h2>
+                    <ul class="list-group list-group-flush">
+                <p class="personal-profile p-3 mb-2 bg-info text-white">Personal Profile</p>
+
+                    <?php getProfile();?>
+                    <button id="logout" class="btn btn-danger">logout</button>
+                    </ul>
                 </div>
                 <div class="col-sm-12 col-md-8">
-                    <h1>Welcome to ONEPLAY online shop</h1>
-                    <p>At ONEPLAY shop you can buy essential tools to improve your ball bounce experience, you can buy
-                        lives, bars at different sizes and bigger balls </p>
-
+                    <h1 class="p-3 mb-2 bg-info text-white" id="order-history">Order History</h1>
                 </div>
+     
             </div>
+
         </main>
         <!-- end main -->
 
@@ -90,10 +90,10 @@ output_head("Title", "Description");
     <!-- begin footer -->
 
     <footer class="container-fluid">
-        <?php 
-        include "php/php-include/footer.php"; 
-        output_footer(); 
-        ?>
+    <?php
+include "php/php-include/footer.php";
+output_footer();
+?>
     </footer>
     <!-- end footer -->
 </body>

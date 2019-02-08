@@ -35,7 +35,7 @@ if($productsFoundCount > 0 ) {
         <td>{$product['price']}</td>
         <td>{$product['description']}</td>
         <td><img id='product-image' class='img-thumbnail' src='{$product['image']}'></td>
-        <td>Add to Basket</td>
+        <td><button>Add to Basket</button></td>
         </tr>";
         $row++;
     }
@@ -43,3 +43,6 @@ if($productsFoundCount > 0 ) {
     echo "Sorry, product not found";
     # code...
 } 
+  //Close the connection
+  $client->close();
+    

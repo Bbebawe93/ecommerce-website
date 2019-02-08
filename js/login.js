@@ -7,6 +7,7 @@ $(document).ready(function () {
         username = $("#log-username").val();
         password = $("#log-password").val();
         login(username, password);
+
     });
 
     function login(username, password) {
@@ -17,11 +18,16 @@ $(document).ready(function () {
             //Check HTTP status code
             if (request.status === 200) {
                 //Get data from server
-                loginError.html(request.responseText);
                 console.log(request.responseText);
+                if (request.responseText == "login") {
+                   location.reload();
+                } else {
+                    loginError.html("<i class='fas fa-times-circle'></i> Invalid username or password");
+                }
             } else
                 console.log("Error communicating with server: " + request.status);
         };
+
         //Send request to server 
         request.send("username=" + username + "&password=" + password);
     }

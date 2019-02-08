@@ -1,3 +1,8 @@
+<?php
+
+//Start session management
+session_start();
+?>
 <!doctype <!DOCTYPE html>
 <!-- Begin html5 document -->
 <html lang="en">
@@ -46,9 +51,17 @@ output_head("Title", "Description");
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="account.php">
+                            <?php
+                            if(!isset($_SESSION['username'])) {
+                                echo '<a class="nav-link" href="account.php">
                                     <i class="fas fa-user"></i> Account
-                                </a>
+                                </a>';
+                            }else {
+                                echo '<a class="nav-link" href="user.php">
+                                    <i class="fas fa-user"></i> Account
+                                </a>';
+                            }
+                            ?>
                             </li>
                         </ul>
                     </div>
@@ -65,7 +78,7 @@ output_head("Title", "Description");
                     <form id="product-search-form" class="" action="" method="POST">
                         <label for="product-search"> <i class="fas fa-search"></i> Search Product:</label><span id="product-search-message"></span>
                         <input class="form-control" type="text" name="product-search" id="product-search" required>
-                        <button type="submit" id="searchBtn">Search</button>
+                        <button type="submit" id="searchBtn" class="btn btn-info">Search</button>
                     </form>
                 </div>
                 <div class="col-sm-12 col-md-8">

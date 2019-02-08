@@ -47,3 +47,6 @@ if ($userExists) {
     $query = $collection->insert($newUser);
     echo "<i class='success'><i class='fas fa-check-circle'></i> user account registered successfully, thank you {$first_name} {$last_name} </i>";
 }
+  //Close the connection
+  $client->close();
+    

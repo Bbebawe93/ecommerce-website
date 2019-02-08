@@ -148,3 +148,21 @@ form .success,
 #product-image{
 max-width: 80px;
 }
+.personal-profile  {
+    margin-top: 20px;
+    height: 60px;
+    margin-bottom: -5px;
+    background-color: skyblue;
+    text-align: center; 
+    font-weight: bold;
+}
+#order-history {
+    margin-top: 20px;
+    /* height: 50px; */
+    margin-bottom: -5px;
+    text-align: center;
+}
+#searchBtn {
+    width: 100%; 
+    margin: 0 auto;
+}

@@ -1,3 +1,8 @@
+<?php
+
+//Start session management
+session_start();
+?>
 <!doctype <!DOCTYPE html>
 <!-- Begin html5 document -->
 <html lang="en">
@@ -44,9 +49,17 @@ output_head("Title", "Description");
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="account.php">
+                            <?php
+                            if(!isset($_SESSION['username'])) {
+                                echo '<a class="nav-link" href="account.php">
                                     <i class="fas fa-user"></i> Account
-                                </a>
+                                </a>';
+                            }else {
+                                echo '<a class="nav-link" href="user.php">
+                                    <i class="fas fa-user"></i> Account
+                                </a>';
+                            }
+                            ?>
                             </li>
                         </ul>
                     </div>
