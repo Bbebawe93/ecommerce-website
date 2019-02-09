@@ -17,7 +17,7 @@ output_head("Title", "Description");
  <script src="js/register.js"></script>
  <script src="js/login.js"></script>
  <script src="js/logout.js"></script>
-
+<script src="js/edit-profile.js"></script>
 </head>
 
 
@@ -71,15 +71,15 @@ output_head("Title", "Description");
                 <div class="col-sm-12 col-md-4">
                     <ul class="list-group list-group-flush">
                 <p class="personal-profile p-3 mb-2 bg-info text-white">Personal Profile</p>
-
+                    <div id="profile-message"></div>
                     <?php getProfile();?>
-                    <button id="logout" class="btn btn-danger">logout</button>
+
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-8">
                     <h1 class="p-3 mb-2 bg-info text-white" id="order-history">Order History</h1>
                 </div>
-     
+
             </div>
 
         </main>

@@ -107,9 +107,10 @@ legend {
 input {
     margin-bottom: 10px;
 }
-#register-button {
+#register-button, #logout, #edit-button, #update-button, #cancel-button {
     width: 100%;
 }
+
 #login-button, #register-button {
     width: 100%;
     margin: 10px 0;
@@ -165,4 +166,15 @@ max-width: 80px;
 #searchBtn {
     width: 100%; 
     margin: 0 auto;
+}
+#edit-profile {
+    margin-top: 20px;
+}
+.profile-info {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    height: 50px; 
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
 }
