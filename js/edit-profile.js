@@ -34,6 +34,8 @@ $(document).ready(function () {
         $("#cancel-button").addClass("hide");
     });
 
+
+    $("cancel-button")
     function updateUser(user) {
         //Create request object 
         var request = new XMLHttpRequest();

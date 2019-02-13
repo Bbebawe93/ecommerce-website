@@ -40,7 +40,7 @@ function getProfile()
     <label for="reg-username"><i class="fa fa-user icon"></i> Username:</label><span id="username-message"></span>
     <input class="form-control" type="text" name="reg-username" id="reg-username" required value = {$customer['username']} disabled>
     <label for="reg-password"><i class="fas fa-key icon"></i> Password:</label><span id="reg-password-message"></span>
-    <input class="form-control" type="text" name="reg-password" id="reg-password" required value = {$customer['password']} disabled>
+    <input class="form-control" type="password" name="reg-password" id="reg-password" required value = {$customer['password']} disabled>
     <span id="reg-error"></span>
     <button type="submit" id="edit-button" class="btn btn-warning">Edit Profile</button>
     <br>
