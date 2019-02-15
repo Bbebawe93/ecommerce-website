@@ -16,6 +16,10 @@ output_head("Title", "Description");
  <!-- js scripts -->
  <script src="js/product-search.js"></script>
  <script src="js/register.js"></script>
+ <script src="js/product-sort.js"></script>
+ <script src="js/product-sort-high.js"></script>
+
+
 </head>
 
 <body>
@@ -79,6 +83,14 @@ output_head("Title", "Description");
                         <label for="product-search"> <i class="fas fa-search"></i> Search Product:</label><span id="product-search-message"></span>
                         <input class="form-control" type="text" name="product-search" id="product-search" required>
                         <button type="submit" id="searchBtn" class="btn btn-info">Search</button>
+                        <br>
+                        <br>
+                        <button type="submit" id="sort-low-high" class="btn btn-secondary">Sort by Price Low-High</button>
+                        <br>
+                        <br>
+
+                        <button type="submit" id="sort-high-low" class="btn btn-secondary">Sort by Price High-Low</button>
+
                     </form>
                 </div>
                 <div class="col-sm-12 col-md-8">

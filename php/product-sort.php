@@ -1,6 +1,4 @@
 <?php
-
-
 // create connection to mongodb server
 $client = new MongoClient();
 
@@ -20,14 +18,14 @@ $searchCriteria = [
 // find product in the database, 
 $productList = $collection->find($searchCriteria);
 
-// get the count to avoid curser iteration 
-$productListCount = $collection->find($searchCriteria);
+$productCount = $productList->count(); 
 
-$productsFoundCount =$productListCount->count(); 
+$sortedProducts = $productList->sort(array('price'=>1));
 
-if($productsFoundCount > 0 ) {
+
+if($productCount > 0 ) {
     $row = 1;
-    foreach($productList as $product) {
+    foreach($sortedProducts as $product) {
         echo 
         "<tr>
         <th scope='row'>$row</th>
@@ -44,6 +42,4 @@ if($productsFoundCount > 0 ) {
     echo "Sorry, product not found";
     # code...
 } 
-  //Close the connection
-  $client->close();
-    
+?>

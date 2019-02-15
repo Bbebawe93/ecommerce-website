@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     var returnedProductList;
     var productToSearch = null;
-    
+
     var searchInfo = $("#search-info");
     var productForm = $("#product-search-form");
     $("#product-search").focus(function () {
@@ -26,8 +26,8 @@ $(document).ready(function () {
     });
 
 
-// loop over products 
-$(".product-info").html(returnedProductList);
+    // loop over products 
+    $(".product-info").html(returnedProductList);
 
     function searchProduct(productToSearch) {
         //Create request object 
@@ -53,7 +53,7 @@ $(".product-info").html(returnedProductList);
 
 
 
-        // var myList = $.parseJSON(productList);
-        //  console.log(myList);
-        console.log($(returnedProductList).length);
+    // var myList = $.parseJSON(productList);
+    //  console.log(myList);
+    console.log($(returnedProductList).length);
 });
