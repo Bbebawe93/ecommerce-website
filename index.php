@@ -73,10 +73,11 @@ output_head("Title", "Description");
         <main class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
+                <h2 class="secondary-heading">Recommended Products</h2>
                     <h2>Recommended Products</h2>
                 </div>
                 <div class="col-sm-12 col-md-8">
-                    <h1>Welcome to ONEPLAY online shop</h1>
+                    <h1  class="main-heading">Welcome to ONEPLAY online shop</h1>
                     <p>At ONEPLAY shop you can buy essential tools to improve your ball bounce experience, you can buy
                         lives, bars at different sizes and bigger balls </p>
 

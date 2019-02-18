@@ -9,37 +9,111 @@ $db = $client->onePlayShop;
 $collection = $db->products;
 
 // get and search product value
-$productToSearch = filter_input(INPUT_POST, 'productToSearch', FILTER_SANITIZE_STRING);
+$productToSort = filter_input(INPUT_POST, 'productToSort', FILTER_SANITIZE_STRING);
+$sortCriteria = filter_input(INPUT_POST, 'sortCriteria', FILTER_SANITIZE_STRING);
+
 
 $searchCriteria = [
-    '$text' => ['$search' => $productToSearch],
+    '$text' => ['$search' => $productToSort],
 ];
 
-// find product in the database, 
-$productList = $collection->find($searchCriteria);
-
-$productCount = $productList->count(); 
-
-$sortedProducts = $productList->sort(array('price'=>1));
 
 
-if($productCount > 0 ) {
-    $row = 1;
-    foreach($sortedProducts as $product) {
-        echo 
-        "<tr>
-        <th scope='row'>$row</th>
-        <td>{$product['name']}</td>
-        <td>{$product['size']}</td>
-        <td>{$product['price']}</td>
-        <td>{$product['description']}</td>
-        <td><img id='product-image' class='img-thumbnail' src='{$product['image']}'></td>
-        <td><button>Add to Basket</button></td>
-        </tr>";
-        $row++;
-    }
-} else{
-    echo "Sorry, product not found";
-    # code...
-} 
+switch($sortCriteria) {
+    case "price-low-high":
+    $productList = $collection->find($searchCriteria)->sort(array("price" => 1));
+    $productCount = $productList->count(); 
+    if($productCount > 0 ) {
+        $row = 1;
+        foreach($productList as $product) {
+            echo 
+            "<tr>
+            <th scope='row'>$row</th>
+            <td>{$product['name']}</td>
+            <td>{$product['size']}</td>
+            <td>{$product['price']}</td>
+            <td>{$product['description']}</td>
+            <td><img id='product-image' class='img-thumbnail' src='{$product['image']}'></td>
+            <td><button>Add to Basket</button></td>
+            </tr>";
+            $row++;
+        }
+    } else{
+        echo "Sorry, product not found";
+        # code...
+    } 
+    break;
+    case "price-high-low":
+    $productList = $collection->find($searchCriteria)->sort(array("price" => -1));
+    $productCount = $productList->count(); 
+    if($productCount > 0 ) {
+        $row = 1;
+        foreach($productList as $product) {
+            echo 
+            "<tr>
+            <th scope='row'>$row</th>
+            <td>{$product['name']}</td>
+            <td>{$product['size']}</td>
+            <td>{$product['price']}</td>
+            <td>{$product['description']}</td>
+            <td><img id='product-image' class='img-thumbnail' src='{$product['image']}'></td>
+            <td><button>Add to Basket</button></td>
+            </tr>";
+            $row++;
+        }
+    } else{
+        echo "Sorry, product not found";
+        # code...
+    } 
+    break;
+    case "name-a-z" :
+    $productList = $collection->find($searchCriteria)->sort(array("name" => 1));
+    $productCount = $productList->count(); 
+    if($productCount > 0 ) {
+        $row = 1;
+        foreach($productList as $product) {
+            echo 
+            "<tr>
+            <th scope='row'>$row</th>
+            <td>{$product['name']}</td>
+            <td>{$product['size']}</td>
+            <td>{$product['price']}</td>
+            <td>{$product['description']}</td>
+            <td><img id='product-image' class='img-thumbnail' src='{$product['image']}'></td>
+            <td><button>Add to Basket</button></td>
+            </tr>";
+            $row++;
+        }
+    } else{
+        echo "Sorry, product not found";
+        # code...
+    } 
+    break; 
+    case "name-z-a" :
+    $productList = $collection->find($searchCriteria)->sort(array("name" => -1));
+    $productCount = $productList->count(); 
+    if($productCount > 0 ) {
+        $row = 1;
+        foreach($productList as $product) {
+            echo 
+            "<tr>
+            <th scope='row'>$row</th>
+            <td>{$product['name']}</td>
+            <td>{$product['size']}</td>
+            <td>{$product['price']}</td>
+            <td>{$product['description']}</td>
+            <td><img id='product-image' class='img-thumbnail' src='{$product['image']}'></td>
+            <td><button>Add to Basket</button></td>
+            </tr>";
+            $row++;
+        }
+    } else{
+        echo "Sorry, product not found";
+        # code...
+    } 
+    
+   
+
+}
+
 ?>

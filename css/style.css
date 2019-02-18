@@ -107,7 +107,7 @@ legend {
 input {
     margin-bottom: 10px;
 }
-#register-button, #logout, #edit-button, #update-button, #cancel-button, #sort-low-high, #sort-high-low {
+#register-button, #logout, #edit-button, #update-button, #cancel-button, #sort-low-high, #sort-high-low, #sort-name-a-z, #sort-name-z-a {
     width: 100%;
 }
 

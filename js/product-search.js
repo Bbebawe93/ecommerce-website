@@ -1,15 +1,12 @@
 $(document).ready(function () {
-
     var returnedProductList;
     var productToSearch = null;
-
-    var searchInfo = $("#search-info");
     var productForm = $("#product-search-form");
     $("#product-search").focus(function () {
         $("#product-search-message").html(" enter the product name");
     });
 
-    var productList = ["ball", "bar", "brick"]
+    var productList = ["ball", "live", "paddle"];
     $("#product-search").autocomplete({
         source: productList,
         delay: 200,
@@ -43,17 +40,12 @@ $(document).ready(function () {
                 //Get data from server
                 $(".product-info").html(request.responseText);
                 returnedProductList = request.responseText;
-            } else
-                console.log("Error communicating with server: " + request.status);
+            } else {
+                $(".product-info").html("Error communicating with server: " + request.status);
+            }
         };
 
         //Send request to server 
         request.send("productToSearch=" + productToSearch);
     }
-
-
-
-    // var myList = $.parseJSON(productList);
-    //  console.log(myList);
-    console.log($(returnedProductList).length);
 });

@@ -15,11 +15,7 @@ output_head("Title", "Description");
 ?>
  <!-- js scripts -->
  <script src="js/product-search.js"></script>
- <script src="js/register.js"></script>
  <script src="js/product-sort.js"></script>
- <script src="js/product-sort-high.js"></script>
-
-
 </head>
 
 <body>
@@ -78,8 +74,9 @@ output_head("Title", "Description");
         <main class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
-                    <h2>Product Search</h2>
                     <form id="product-search-form" class="" action="" method="POST">
+                    <br>
+                    <br>
                         <label for="product-search"> <i class="fas fa-search"></i> Search Product:</label><span id="product-search-message"></span>
                         <input class="form-control" type="text" name="product-search" id="product-search" required>
                         <button type="submit" id="searchBtn" class="btn btn-info">Search</button>
@@ -88,13 +85,18 @@ output_head("Title", "Description");
                         <button type="submit" id="sort-low-high" class="btn btn-secondary">Sort by Price Low-High</button>
                         <br>
                         <br>
-
                         <button type="submit" id="sort-high-low" class="btn btn-secondary">Sort by Price High-Low</button>
+                        <br>
+                        <br>
+                        <button type="submit" id="sort-name-a-z" class="btn btn-secondary">Sort by Name A-Z</button>
+                        <br>
+                        <br>
+                        <button type="submit" id="sort-name-z-a" class="btn btn-secondary">Sort by Name Z-A</button>
 
                     </form>
                 </div>
                 <div class="col-sm-12 col-md-8">
-                    <h1>Welcome to ONEPLAY online shop</h1>
+                    <h1 class="main-heading">Search our Product List</h1>
                     <div id="search-info"></div>
                     <table class="table table-hover">
                         <thead>
